@@ -7,8 +7,7 @@ from pathlib import Path
 def parse_brsccp_log(file_path):
     path = Path(file_path)
     if not path.exists():
-        print(f"Error: File {file_path} not found.")
-        return None
+        raise FileNotFoundError(f"Error: File {file_path} not found.")
 
     log_content = path.read_text(encoding='utf-8')
 
